@@ -77,5 +77,5 @@ Controller.chooseCategories = function() {
 	}
 }
 
-//Controller.load("splash");
-Controller.load("player-setup");
+Controller.load("splash");
+//Controller.load("player-setup");
