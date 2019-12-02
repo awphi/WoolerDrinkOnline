@@ -1,16 +1,21 @@
 html, body {
 	height: 100%;
+	width: 100%;
 	margin: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 h1, h2, h3, p, a {
 	font-family: 'Axiforma Book';
 	margin: 0;
 	color: rgba(255, 255, 255, 1);
+	font-weight: normal;
+	text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-	font-size: 52pt;
+	font-size: 40pt;
 }
 
 .flex {

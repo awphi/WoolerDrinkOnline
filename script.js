@@ -1,11 +1,20 @@
 const $root = $("#root")
-const Game = {}
+const Controller = {}
 
-Game.startGame = function(mode) {
-	if(mode == "Battle Royale") {
-		Game.mode = 0
+Controller.startGame = function(mode) {
+	if(mode === 1) {
+		Controller.mode = 1
 	} else {
-		Game.mode = 1;
+		Controller.mode = 0
 	}
+
+	Controller.loadPlayerSelect()
 }
 
+Controller.load = function(view) {
+	$.ajax({url: "./views/" + view + ".html", dataType: "html", success: function(result){
+		$("#root").html(result);
+	}});
+}
+
+Controller.load("splash");
