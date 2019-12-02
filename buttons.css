@@ -1,15 +1,32 @@
 button {
 	border: none;
 	color: white;
-	padding: 15px 32px;
+	padding: 10px 20px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
 	border-radius: 2em;
-	box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 5px 5px 8px var(--cl-shadow);
+	font-family: 'Axiforma Light';
+}
+
+button:focus {
+	outline: none;
 }
 
 button.green {
-	background-color: #4CAF50; /* Green */
+	background-color: var(--cl-green);
+}
+
+button.red {
+	background-color: var(--cl-red);
+}
+
+button.orange {
+	background-color: var(--cl-orange);
+}
+
+button.dark {
+	background-color: var(--cl-dark);
 }

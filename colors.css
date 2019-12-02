@@ -1,0 +1,10 @@
+body {
+	--cl-box: #273746;
+	--cl-dark: #1C2833;
+	--cl-green: #4CAF50;
+	--cl-orange: #EB984E;
+	--cl-red: #E74C3C;
+	--cl-shadow: rgba(0, 0, 0, 0.2);
+	--cl-default: rgba(200, 100, 50, 0.9);
+	--cl-marker: rgba(0, 0, 0, 0.2);
+}
