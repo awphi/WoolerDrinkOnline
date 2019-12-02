@@ -12,7 +12,7 @@ Controller.startGame = function(mode) {
 }
 
 Controller.load = function(view) {
-	$.ajax({url: "./views/" + view + ".html", dataType: "html", success: function(result){
+	$.ajax({url: "./views/" + view + ".html", success: function(result){
 		$("#root").html(result);
 	}});
 }
