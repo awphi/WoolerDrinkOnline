@@ -1,0 +1,48 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+h1, h2, h3, p, a {
+	font-family: 'Axiforma Book';
+	margin: 0;
+	color: rgba(255, 255, 255, 1);
+}
+
+h1 {
+	font-size: 52pt;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-fill {
+	flex: 1;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-hcenter {
+	align-items: center;
+}
+
+.flex-vcenter {
+	justify-content: center;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200, 100, 50, 0.9);
+}
