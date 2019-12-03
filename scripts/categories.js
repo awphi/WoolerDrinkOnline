@@ -30,15 +30,6 @@ const Categories = {
 			image: "bottle.png",
 			weight: 4
 		},
-		stb: {
-			name: "Spin The Bottle",
-			desc: "A simple game of chance...",
-			image: "bottle.png",
-			handler: function() {
-				//TODO load a spin the bottle unit into the game view
-			},
-			weight: 2
-		},
 		nhie: {
 			name: "Never Have I Ever",
 			desc: "A classic assortment of \"Never have I ever ...\" questions.",

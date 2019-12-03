@@ -115,10 +115,11 @@ Game.pickAndParseTask = function(cat) {
 	}
 
 	const matches = task.description.match(Game.regex)
+	console.log(matches)
 
 	if(matches != null) {
 		for (var i = matches.length - 1; i >= 0; i--) {
-			const index = matches[i][2]
+			const index = matches[i].split("[")[1].split("]")[0]
 		 	
 		 	// Assigns players into parseMap
 		 	if(!(index in parseMap)) {
@@ -133,13 +134,15 @@ Game.pickAndParseTask = function(cat) {
 		}
 
 		for (var i = matches.length - 1; i >= 0; i--) {
-			const regexp = new RegExp(Controller.escapeRegExp(matches[i][0]), "g")
-			const playeri = parseMap[matches[i][2]]
+			const regexp = new RegExp(Controller.escapeRegExp(matches[i]), "g")
+			const index = matches[i].split("[")[1].split("]")[0]
+			const playeri = parseMap[index]
+			const arg = matches[i].split("[")[0].split("<")[1]
 
-			if(matches[i][1] === "player") {
+			if(arg === "player") {
 				task.description = task.description.replace(regexp, playeri.name)
-			} else if(matches[i][1] === "sips") {
-				task.description = task.description.replace(regexp, Game.calculateSips(playeri.sips, task.penalty))
+			} else if(arg === "sips") {
+				task.description = task.description.replace(regexp, Game.calculateSips(playeri.sips, task.penalty) + " sips")
 			}
 		}
 	}
@@ -162,21 +165,33 @@ Game.setDecisionButtons = function(state1, state2, state3) {
 
 
 Game.playerDied = function(player) {
-	//TODO open a death popup saying down ur drink or whatever we decide should happen when you die
-	player.hearts = 2
+	Unit.loadPopup("player-dead-popup")
+}
+
+Game.playerResurrect = function() {
+	Unit.hidePopupLayer()
+	Game.activePlayer.sips += 7
+	Game.activePlayer.hearts = 2
+	Game.playRound()
+}
+
+Game.playerStayDead = function() {
+	Unit.hidePopupLayer()
+	Game.playRound()
 }
 
 Game.decisionMade = function(dec) {
-	Game.setDecisionButtons(true)
+	Game.setDecisionButtons(true, true, true)
 	if(dec === "drink") {
 		Game.activePlayer.sips += Game.activeSips
 	} 
 
-	if(dec === "heart") {
+	if(dec === "heart" && Game.activePlayer.hearts > 0) {
 		Game.activePlayer.hearts -= 1
 
 		if(Game.activePlayer.hearts === 0) {
 			Game.playerDied(Game.activePlayer)
+			return
 		}
 	}
 
@@ -188,14 +203,24 @@ Game.decisionMade = function(dec) {
 }
 
 Game.playRound = function() {
+	$("#task-string").css("display", "none")
+	$("#drink-button").text("Drink ?")
+
 	const player = Game.assignActivePlayer()
 	$("#player-name").text(player.name)
 	$("#sips-string").text(player.sips)
 	$("#heart-string").text(player.hearts)
+	Unit.loadPopup("task-roll-popup")
+}
+
+Game.loadTask = function() {
+	Unit.hidePopupLayer()
+	$("#task-string").css("display", "")
 
 	const cat = Game.pickCategory()
 
 	if(Categories.raw[cat].hasOwnProperty("handler")) {
+		$("#task-string").css("display", "none")
 		Categories.raw[cat].handler()
 	} else {
 		const task = Game.pickAndParseTask(cat)
@@ -205,7 +230,7 @@ Game.playRound = function() {
 		// Disables the drink button if the penalty is -1 i.e. they have to lose a life or do the task
 		if(task.penalty !== -1) {
 			Game.setDecisionButtons(false, false, false)
-			$("#drink-button").text("Drink " + Game.calculateSips(player.sips, task.penalty))
+			$("#drink-button").text("Drink " + Game.calculateSips(Game.activePlayer.sips, task.penalty))
 		} else {
 			Game.setDecisionButtons(false, true, false)
 			$("#drink-button").text("No alternative!")

@@ -111,12 +111,9 @@ Controller.playGame = function() {
 	}
 }
 
-Controller.load("splash")
+//Controller.load("splash")
 
-/*
-Controller.load("game")
-
-Controller.categories.push("dares_sexy")
+Controller.categories.push("drink")
 Controller.players[0] = {
 	name: "Adam",
 	male: true,
@@ -131,4 +128,6 @@ Controller.players[1] = {
 	sips: 0,
 	id: 1,
 	hearts: 2
-}*/
+}
+
+Controller.load("game")
