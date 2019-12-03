@@ -48,5 +48,3 @@ Categories.populate = function() {
 		})
 	}
 }
-
-Categories.populate();

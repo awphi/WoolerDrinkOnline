@@ -1,6 +1,6 @@
 [
 	{
-		"description": "<player[0]> kisses <player[1]>. <player[0]> must pretend to really into it.",
+		"description": "Kiss <player[1]>. You must pretend to really into it.",
 		"penalty": 0
 	}
 ]

@@ -5,6 +5,10 @@ const Controller = {
 	categories: []
 }
 
+Controller.escapeRegExp = function(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
 Controller.startGame = function(mode) {
 	if(mode === 1) {
 		Controller.gamemode = 1
@@ -17,6 +21,12 @@ Controller.load = function(view) {
 	$.ajax({url: "./views/" + view + ".html", success: function(result){
 		$root.html(result);
 	}});
+}
+
+Controller.randomInt = function(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 Controller.addPlayer = function() {
@@ -92,5 +102,22 @@ Controller.playGame = function() {
 	}
 }
 
-Controller.load("splash");
-//Controller.load("categories");
+Controller.load("splash")
+
+/*
+Controller.load("game")
+
+Controller.categories.push("dares_sexy")
+Controller.players[0] = {
+	name: "Adam",
+	male: true,
+	sips: 0,
+	"id": 0
+}
+
+Controller.players[1] = {
+	name: "Daniel",
+	male: true,
+	sips: 0,
+	"id": 1
+}*/
