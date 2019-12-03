@@ -1,5 +1,4 @@
 const $root = $("#root")
-
 const Controller = {
 	gamemode: 0,
 	players: {},
@@ -21,13 +20,17 @@ Controller.load = function(view) {
 }
 
 Controller.addPlayer = function() {
-	Unit.load("player", $("#player-view")).then((id) =>
+	Unit.load("player", $("#player-view")).then((id) => {
 		Controller.players[id] = {
 			id: id,
 			name: "Player",
-			male: true
+			male: true,
+			sips: 0
 		}
-	)
+
+		const $elem = $("#player-view");
+		$elem.scrollTop($elem[0].scrollHeight);
+	})
 }
 
 Controller.resolvePlayerByElem = function(elem) {
@@ -62,12 +65,6 @@ Controller.swapGenderByElem = function(elem) {
 }
 
 Controller.chooseCategories = function() {
-	const c = $("playerunit")
-	for (var i = c.length - 1; i >= 0; i--) {
-		var id = Number($(c).attr("uid"));
-
-	}
-
 	for (var player in Controller.players) {
 		Controller.players[player].name = $("playerunit[uid=" + player + "]").children("p").text()
 	}
@@ -77,5 +74,23 @@ Controller.chooseCategories = function() {
 	}
 }
 
+Controller.playGame = function() {
+	Controller.categories = []
+
+	const c = $("categoryunit")
+	for (var i = c.length - 1; i >= 0; i--) {
+		const $ci = $(c[i])
+		const checkbox = $ci.find("input[type='checkbox']")
+
+		if(checkbox.is(':checked')) {
+			Controller.categories.push($ci.find(".category-id").text())
+		}
+	}
+
+	if(Controller.categories.length >= 1) {
+		Controller.load("game");
+	}
+}
+
 Controller.load("splash");
-//Controller.load("player-setup");
+//Controller.load("categories");

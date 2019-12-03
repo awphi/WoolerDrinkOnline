@@ -30,3 +30,11 @@ button.orange {
 button.dark {
 	background-color: var(--cl-dark);
 }
+
+button:active {
+	transform: translateY(2px);
+}
+
+button:disabled {
+	opacity: 60%;
+}
