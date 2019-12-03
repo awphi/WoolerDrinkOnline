@@ -1,5 +1,17 @@
 [
 	{
-		"description": "Take a shot of vodka.",
-		"penalty": 1
+		"description": "Drink a shot of vodka.",
+		"penalty": 1,
+		"isDrinking": 4
+	},
+	{
+		"description": "Drink a shot of rum.",
+		"penalty": -1,
+		"isDrinking": 4
+	},
+	{
+		"description": "Drink <sips[0]> of the most disgusting looking drink on the table.",
+		"penalty": -1,
+		"isDrinking": "sips"
 	}
+]

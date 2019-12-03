@@ -2,5 +2,53 @@
 	{
 		"description": "Kiss <player[1]>. You must pretend to really into it.",
 		"penalty": 0
+	},
+	{
+		"description": "Record yourself jacking or jilling.",
+		"penalty": 0
+	},
+	{
+		"description": "Use the calendar for 2D bukkakke.",
+		"penalty": 0
+	},
+	{
+		"description": "Remove an item from the fridge or freezer in the style of a “thot”.",
+		"penalty": 1
+	},
+	{
+		"description": "Imitate the Cock Destroyers™.",
+		"penalty": 1
+	},
+	{
+		"description": "Do something ratchet™.",
+		"penalty": 2
+	},
+	{
+		"description": "Gush delightfully in the corner.",
+		"penalty": 0
+	},
+	{
+		"description": "Slut drop.",
+		"penalty": 2
+	},
+	{
+		"description": "<player[1]> chooses someone to call and ask “Wanna fuck?”.",
+		"penalty": 1
+	},
+	{
+		"description": "<player[1]> chooses someone to call and ask “How deep is your clunge?”.",
+		"penalty": 1
+	},
+	{
+		"description": "Remove an item of clothing.",
+		"penalty": 2
+	},
+	{
+		"description": "Remove two items of clothing.",
+		"penalty": 1
+	},
+	{
+		"description": "Remove three items of clothing.",
+		"penalty": 1
 	}
 ]

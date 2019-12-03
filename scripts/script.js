@@ -35,11 +35,16 @@ Controller.addPlayer = function() {
 			id: id,
 			name: "Player",
 			male: true,
-			sips: 0
+			sips: 0,
+			hearts: 2
 		}
 
 		const $elem = $("#player-view");
 		$elem.scrollTop($elem[0].scrollHeight);
+
+		if(Object.keys(Controller.players).length >= 2) {
+			$("#player-set-up-done-button").attr("disabled", false)
+		}
 	})
 }
 
@@ -55,6 +60,10 @@ Controller.resolvePlayerByElem = function(elem) {
 
 Controller.removePlayer = function(id) {
 	delete Controller.players[id]
+
+	if(Object.keys(Controller.players).length < 2) {
+		$("#player-set-up-done-button").attr("disabled", true)
+	}
 }
 
 Controller.removePlayerByElem = function(elem) {
@@ -112,12 +121,14 @@ Controller.players[0] = {
 	name: "Adam",
 	male: true,
 	sips: 0,
-	"id": 0
+	id: 0,
+	hearts: 2
 }
 
 Controller.players[1] = {
 	name: "Daniel",
 	male: true,
 	sips: 0,
-	"id": 1
+	id: 1,
+	hearts: 2
 }*/

@@ -114,31 +114,33 @@ Game.pickAndParseTask = function(cat) {
 		"ld": Game.getLeastDrunkPlayer()
 	}
 
-	const matches = [...task.description.matchAll(Game.regex)]
+	const matches = task.description.match(Game.regex)
 
-	for (var i = matches.length - 1; i >= 0; i--) {
-		const index = matches[i][2]
-	 	
-	 	// Assigns players into parseMap
-	 	if(!(index in parseMap)) {
-	 		const pl = Game.getRandomPlayer(parseMap)
+	if(matches != null) {
+		for (var i = matches.length - 1; i >= 0; i--) {
+			const index = matches[i][2]
+		 	
+		 	// Assigns players into parseMap
+		 	if(!(index in parseMap)) {
+		 		const pl = Game.getRandomPlayer(parseMap)
 
-	 		if(pl == null) {
-	 			return Game.pickAndParseTask(cat);
-	 		} else {
-				parseMap[index] = pl
-	 		}
-	 	}
-	}
+		 		if(pl == null) {
+		 			return Game.pickAndParseTask(cat);
+		 		} else {
+					parseMap[index] = pl
+		 		}
+		 	}
+		}
 
-	for (var i = matches.length - 1; i >= 0; i--) {
-		const regexp = new RegExp(Controller.escapeRegExp(matches[i][0]), "g")
-		const playeri = parseMap[matches[i][2]]
+		for (var i = matches.length - 1; i >= 0; i--) {
+			const regexp = new RegExp(Controller.escapeRegExp(matches[i][0]), "g")
+			const playeri = parseMap[matches[i][2]]
 
-		if(matches[i][1] === "player") {
-			task.description = task.description.replace(regexp, playeri.name)
-		} else if(matches[i][1] === "sips") {
-			task.description = task.description.replace(regexp, Game.calculateSips(playeri.sips, task.penalty))
+			if(matches[i][1] === "player") {
+				task.description = task.description.replace(regexp, playeri.name)
+			} else if(matches[i][1] === "sips") {
+				task.description = task.description.replace(regexp, Game.calculateSips(playeri.sips, task.penalty))
+			}
 		}
 	}
 
@@ -152,18 +154,34 @@ Game.assignActivePlayer = function() {
 	return Game.activePlayer
 }
 
-Game.setDecisionButtons = function(state) {
-	$("#task-button").attr("disabled", state)
-	$("#drink-button").attr("disabled", state)
-	$("#heart-button").attr("disabled", state)
+Game.setDecisionButtons = function(state1, state2, state3) {
+	$("#task-button").attr("disabled", state1)
+	$("#drink-button").attr("disabled", state2)
+	$("#heart-button").attr("disabled", state3)
+}
+
+
+Game.playerDied = function(player) {
+	//TODO open a death popup saying down ur drink or whatever we decide should happen when you die
+	player.hearts = 2
 }
 
 Game.decisionMade = function(dec) {
 	Game.setDecisionButtons(true)
 	if(dec === "drink") {
 		Game.activePlayer.sips += Game.activeSips
-	} else if(dec === "heart") {
-		//TODO heart system etc.
+	} 
+
+	if(dec === "heart") {
+		Game.activePlayer.hearts -= 1
+
+		if(Game.activePlayer.hearts === 0) {
+			Game.playerDied(Game.activePlayer)
+		}
+	}
+
+	if(dec === "task" && "isDrinking" in Game.activeTask) {
+		Game.activePlayer.sips += Game.activeTask.isDrinking === "sips" ? Game.activeSips : Game.activeTask.isDrinking
 	}
 
 	Game.playRound()
@@ -171,7 +189,9 @@ Game.decisionMade = function(dec) {
 
 Game.playRound = function() {
 	const player = Game.assignActivePlayer()
-	$("#player-name").text(player.name + " - " + player.sips + " sips")
+	$("#player-name").text(player.name)
+	$("#sips-string").text(player.sips)
+	$("#heart-string").text(player.hearts)
 
 	const cat = Game.pickCategory()
 
@@ -179,8 +199,16 @@ Game.playRound = function() {
 		Categories.raw[cat].handler()
 	} else {
 		const task = Game.pickAndParseTask(cat)
+		Game.activeTask = task
 		$("#task-string").text(task.description)
-		$("#drink-button").text("Drink " + Game.calculateSips(player.sips, task.penalty))
-		Game.setDecisionButtons(false)
+		
+		// Disables the drink button if the penalty is -1 i.e. they have to lose a life or do the task
+		if(task.penalty !== -1) {
+			Game.setDecisionButtons(false, false, false)
+			$("#drink-button").text("Drink " + Game.calculateSips(player.sips, task.penalty))
+		} else {
+			Game.setDecisionButtons(false, true, false)
+			$("#drink-button").text("No alternative!")
+		}
 	}
 }

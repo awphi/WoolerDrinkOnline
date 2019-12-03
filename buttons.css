@@ -36,5 +36,5 @@ button:active {
 }
 
 button:disabled {
-	opacity: 60%;
+	opacity: 0.5;
 }

@@ -1,0 +1,34 @@
+[
+	{
+		"description": "What’s the shortest time you’ve known someone before fucking?",
+		"penalty": 3
+	},
+	{
+		"description": "What sexual act do you think is overrated?",
+		"penalty": 3
+	},
+	{
+		"description": "Name the last person you had sex with.",
+		"penalty": 3
+	},
+	{
+		"description": "Name the last person you snogged.",
+		"penalty": 6
+	},
+	{
+		"description": "What’s #1 on your sexual bucket list? ",
+		"penalty": 3
+	},
+	{
+		"description": "Have you ever taken someone’s virginity?",
+		"penalty": 3
+	},
+	{
+		"description": "What was the most recent porno you watched?",
+		"penalty": 2
+	},
+	{
+		"description": "What was the genre of the most recent porno you watched?",
+		"penalty": 5
+	}
+]

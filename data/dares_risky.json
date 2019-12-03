@@ -1,0 +1,30 @@
+[
+	{
+		"description": "Contact Felix Tavchandjian by any means necessary.",
+		"penalty": 1
+	},
+	{
+		"description": "Activate all doorbells in the block.",
+		"penalty": 2
+	},
+	{
+		"description": "Enter the Wooler C kitchen.",
+		"penalty": 0
+	},
+	{
+		"description": "Contact Felix Tavchandjian by any means necessary.",
+		"penalty": 1
+	},
+	{
+		"description": "Enter Wooler C and knock on the door of an occupant.",
+		"penalty": 1
+	},
+	{
+		"description": "Vomit on the table.",
+		"penalty": 1
+	},
+	{
+		"description": "Email the members of your flat informing them that they are 'ratchet'.",
+		"penalty": 3
+	}
+]

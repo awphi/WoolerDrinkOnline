@@ -1,0 +1,34 @@
+[
+	{
+		"description": "Activate all fire safety equipment for 5 seconds.",
+		"penalty": 0
+	},
+	{
+		"description": "Plank atop the fridge.",
+		"penalty": 1
+	},
+	{
+		"description": "Enter the iron cupboard until your next turn.",
+		"penalty": 0
+	},
+	{
+		"description": "Knock on the door to Wooler C.",
+		"penalty": 2
+	},
+	{
+		"description": "Pull the fridge halfway across the room.",
+		"penalty": 0
+	},
+	{
+		"description": "Lick the window.",
+		"penalty": 2
+	},
+	{
+		"description": "Feel the delightfully textured lighting strips.",
+		"penalty": 1
+	},
+	{
+		"description": "Give <player[1]> 2 pounds.",
+		"penalty": 2
+	}
+]

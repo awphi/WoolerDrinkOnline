@@ -19,6 +19,20 @@ Unit.load = function(unit, into) {
 	})
 }
 
+Unit.loadPopup = function(unit) {
+	const $pl = $("#popup-layer")
+	$pl.empty()
+	$pl.css("display", "flex")
+
+	return Unit.load(unit, $pl)
+}
+
+Unit.hidePopupLayer = function() {
+	const $pl = $("#popup-layer")
+	$pl.empty()
+	$pl.css("display", "none")
+}
+
 Unit.loadInternal = function(into, result) {
 	var y = $(result)
 	y.attr("uid", Unit.nextUid)
