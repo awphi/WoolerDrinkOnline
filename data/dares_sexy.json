@@ -50,5 +50,9 @@
 	{
 		"description": "Remove three items of clothing.",
 		"penalty": 0
-	}
+	},
+	{
+		"description": "Have a pilly wee.",
+		"penalty": 0
+	},
 ]

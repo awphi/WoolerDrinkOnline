@@ -10,8 +10,29 @@
 		"isDrinking": 4
 	},
 	{
+		"description": "Drink a wooler bomb.",
+		"penalty": -1,
+		"isDrinking": 3
+	},
+	{
 		"description": "Drink <sips[0]> of the most disgusting drink on the table.",
 		"penalty": -1,
 		"isDrinking": "sips"
+	},
+	{
+		"description": "One by one fill your glasses to the brim. <player[0]> you start.",
+		"penalty": -1
+	},
+	{
+		"description": "Everyone drinks <sips[0]>.",
+		"penalty": -1,
+		"isDrinking": "sips",
+		"group": "everyone"
+	},
+	{
+		"description": "All girls drink <sips[0]>.",
+		"penalty": -1,
+		"isDrinking": "sips",
+		"group": "female"
 	}
 ]

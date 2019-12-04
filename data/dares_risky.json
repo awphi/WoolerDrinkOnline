@@ -26,5 +26,13 @@
 	{
 		"description": "Email the members of your flat informing them that they are 'ratchet'.",
 		"penalty": 3
+	},
+	{
+		"description": "Drink some of Aimee's out of date milk.",
+		"penalty": 0
+	},
+	{
+		"description": "Stick your hand as far as possible down the toilet bowl.",
+		"penalty": 0
 	}
 ]

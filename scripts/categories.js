@@ -24,6 +24,12 @@ const Categories = {
 			image: "sexy_symbol.png",
 			weight: 7
 		},
+		truths_regular: {
+			name: "Regular Truths",
+			desc: "A standard set of truth questions.",
+			image: "sexy_symbol.png",
+			weight: 5
+		},
 		drink: {
 			name: "Straight Drinking",
 			desc: "You\'re playing a drinking game - what more do you want?",
@@ -35,10 +41,11 @@ const Categories = {
 			desc: "A classic assortment of \"Never have I ever ...\" questions.",
 			image: "nhie.png",
 			handler: function() {
-				const nhieText = Game.taskbank.nhie[Controller.randomInt(0, Game.taskbank.nhie.length - 1)]
+				const nhie = Game.taskbank.nhie[Controller.randomInt(0, Game.taskbank.nhie.length - 1)]
 				Unit.load("nhie", $("#task-view")).then((id) => {
 					const $tv = $("#task-view")
-					$tv.find("#nhie-text").text("Drink 1 sip if you have " + nhieText)
+					Game.activeSips = nhie.sips
+					$tv.find("#nhie-text").text("Drink " + nhie.sips + " sip if you have " + nhie.description)
 				})
 			},
 			weight: 8

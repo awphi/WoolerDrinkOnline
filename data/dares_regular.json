@@ -30,5 +30,9 @@
 	{
 		"description": "Give <player[1]> 2 pounds.",
 		"penalty": 2
+	},
+	{
+		"description": "Pick your nose.",
+		"penalty": 2
 	}
 ]

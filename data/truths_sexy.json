@@ -30,5 +30,25 @@
 	{
 		"description": "What was the genre of the most recent porno you watched?",
 		"penalty": 5
+	},
+	{
+		"description": "How many points have you scored since being at Durham?",
+		"penalty": 2
+	},
+	{
+		"description": "Spit or swallow?",
+		"penalty": 2
+	},
+	{
+		"description": "If you had to have sex with one animal, which one would you choose?",
+		"penalty": 2
+	},
+	{
+		"description": "What is your roleplaying fantasy?",
+		"penalty": 2
+	},
+	{
+		"description": "Describe your masturbation routine.",
+		"penalty": 4
 	}
 ]

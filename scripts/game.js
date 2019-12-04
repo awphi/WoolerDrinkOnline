@@ -84,7 +84,12 @@ Game.getRandomPlayer = function(parseMap) {
 }
 
 Game.registerSips = function(task) {
-	Game.activeSips = Game.calculateSips(Game.activePlayer.sips, task.penalty)
+	if(!("isDrinking" in task) | task["isDrinking"] === "sips") {
+		Game.activeSips = Game.calculateSips(Game.activePlayer.sips, task.penalty)
+	} else {
+		Game.activeSips = Number(task["isDrinking"])
+	}
+
 	$("#drink-button").text("Drink " + Game.activeSips)
 }
 
@@ -177,7 +182,7 @@ Game.assignedDrinkersConfirmed = function() {
 	const $c = $("input.assigned-drinker-checkbox")
 	for (var i = $c.length - 1; i >= 0; i--) {
 		if($c[i].checked) {
-			Controller.players[$($c[i]).parent().parent().find(".player-id").text()].sips += 1
+			Controller.players[$($c[i]).parent().parent().find(".player-id").text()].sips += Game.activeSips
 		}
 	}
 
@@ -230,7 +235,25 @@ Game.decisionMade = function(dec) {
 	}
 
 	if(dec === "task" && "isDrinking" in Game.activeTask) {
-		Game.activePlayer.sips += Game.activeTask.isDrinking === "sips" ? Game.activeSips : Game.activeTask.isDrinking
+		if(Game.activeTask["group"] !== null) {
+			const grp = Game.activeTask["group"]
+
+			if(grp === "everyone") {
+				for(key in Controller.players) {
+					Controller.players[key].sips += Game.activeSips
+				}
+			} else if(grp === "female" || grp === "male") {
+				for(key in Controller.players) {
+					var shouldDrink = (grp === "male" && Controller.players[key].male) || (grp === "female" && !Controller.players[key].male)
+
+					if(shouldDrink) {
+						Controller.players[key].sips += Game.activeSips
+					}
+				}
+			}
+		} else {
+			Game.activePlayer.sips += Game.activeSips
+		}
 	}
 
 	Game.playRound()
