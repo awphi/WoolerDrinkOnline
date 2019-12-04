@@ -27,7 +27,7 @@ const Categories = {
 		truths_regular: {
 			name: "Regular Truths",
 			desc: "A standard set of truth questions.",
-			image: "sexy_symbol.png",
+			image: "truth.png",
 			weight: 5
 		},
 		drink: {

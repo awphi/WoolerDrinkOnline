@@ -50,5 +50,89 @@
 	{
 		"description": "Describe your masturbation routine.",
 		"penalty": 4
-	}
+	},
+	    {
+        "description": "If I paid you $100, would you wear your sexiest clothes to class?",
+        "penalty": 0
+    },
+    {
+        "description": "If you had to go skinny dipping with someone, who in this room would you choose?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever been in a \"friends with benefits\" situation?",
+        "penalty": 0
+    },
+    {
+        "description": "How much money would we have to pay you for you to agree to flash your boobs?",
+        "penalty": 0
+    },
+    {
+        "description": "Do you sleep in the nude?",
+        "penalty": 0
+    },
+    {
+        "description": "Would you go out with an older guy? How old is too old?",
+        "penalty": 0
+    },
+    {
+        "description": "What's your ultimate sexual fantasy?",
+        "penalty": 0
+    },
+    {
+        "description": "When did you lose your virginity, and to whom did you lose it?",
+        "penalty": 0
+    },
+    {
+        "description": "When and where was your first kiss? Who was it with?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever been attracted to the same sex?",
+        "penalty": 0
+    },
+    {
+        "description": "How many people have you kissed?",
+        "penalty": 0
+    },
+    {
+        "description": "What's your favorite body part on your partner?",
+        "penalty": 0
+    },
+    {
+        "description": "Who do you most want to sleep with, out of everyone here?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever searched for something dirty on the internet?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever sent a nude selfie? Who would you send it to?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever seen a naughty magazine?",
+        "penalty": 0
+    },
+    {
+        "description": "Who has seen you without clothes on?",
+        "penalty": 0
+    },
+    {
+        "description": "Would you ever consider posing for Playboy?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever been to a nudist beach? Would you consider going?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever sexted anyone?",
+        "penalty": 0
+    },
+    {
+        "description": "Have you ever flashed someone?",
+        "penalty": 0
+    }
 ]
