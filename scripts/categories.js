@@ -35,7 +35,11 @@ const Categories = {
 			desc: "A classic assortment of \"Never have I ever ...\" questions.",
 			image: "nhie.png",
 			handler: function() {
-				//TODO NHIE handler so it will cope with the whole table being proposed the question + select who drinks from it
+				const nhieText = Game.taskbank.nhie[Controller.randomInt(0, Game.taskbank.nhie.length - 1)]
+				Unit.load("nhie", $("#task-view")).then((id) => {
+					const $tv = $("#task-view")
+					$tv.find("#nhie-text").text("Drink 1 sip if you have " + nhieText)
+				})
 			},
 			weight: 8
 		}

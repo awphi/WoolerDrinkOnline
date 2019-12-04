@@ -14,14 +14,18 @@ const Game = {
 		return Math.round(y)
 	},
 	calculateSipsStandard: function(sipsIn, penalty) {
-		//TODO incorporate penalty
-		const y = 0.7 * Math.log(Math.pow(sipsIn, 3) + 5)
+		const y = (0.7 + (penalty / 16)) * Math.log(Math.pow(sipsIn, 3) + 5)
 		return Math.round(y)
 	},
 	calculateSipsBrutal: function(sipsIn, penalty) {
-		//TODO incorporate penalty
-		const y = Math.pow(Math.e, 0.01 * (sipsIn + 200))
+		const y = Math.pow(Math.E, 0.01 * (sipsIn + 210 + (10 * penalty)))
 		return Math.round(y)
+	},
+	calculateSipsRandomized: function(sipsIn, penalty) {
+		const sips = Game.calculateSips(sipsIn, penalty)
+		const r = Controller.randomInt(-(sips / 4), (sips / 4))
+		sips += r
+		return r
 	},
 	calculateSips: null
 }
@@ -46,9 +50,7 @@ Game.compileTasks = function() {
 	Game.taskbank = {}
 	for (var i = Controller.categories.length - 1; i >= 0; i--) {
 		const e = Controller.categories[i]
-		if(!Categories.raw[e].hasOwnProperty("handler")) {
-			$.ajax({url: "./data/" + e + ".json", async: false, success: (result) => Game.taskbank[e] = result })
-		}
+		$.ajax({url: "./data/" + e + ".json", async: false, success: (result) => Game.taskbank[e] = result })
 	}
 }
 
@@ -154,12 +156,33 @@ Game.pickAndParseTask = function(cat) {
 			if(arg === "player") {
 				task.description = task.description.replace(regexp, playeri.name)
 			} else if(arg === "sips") {
-				task.description = task.description.replace(regexp, Game.calculateSips(playeri.sips, task.penalty) + " sips")
+				task.description = task.description.replace(regexp, Game.calculateSipsRandomized(playeri.sips, task.penalty) + " sips")
 			}
 		}
 	}
 
 	return task
+}
+
+Game.loadAssignedDrinkers = function() {
+	for(const key in Controller.players) {
+		Unit.load("drinker", $("#drinkers-view")).then((id) => {
+			const $unit = $("drinkerunit[uid='" + id +"']")
+			$unit.find(".player-id").text(key)
+			$unit.find(".player-name").text(Controller.players[key].name)
+		})
+	}
+}
+
+Game.assignedDrinkersConfirmed = function() {
+	const $c = $("input.assigned-drinker-checkbox")
+	for (var i = $c.length - 1; i >= 0; i--) {
+		if($c[i].checked) {
+			Controller.players[$($c[i]).parent().parent().find(".player-id").text()].sips += 1
+		}
+	}
+
+	Game.playRound()
 }
 
 Game.assignActivePlayer = function() {
@@ -217,6 +240,7 @@ Game.decisionMade = function(dec) {
 Game.playRound = function() {
 	$("#task-string").css("display", "none")
 	$("#drink-button").text("Drink ?")
+	$("#task-view *:not('#task-string')").remove();
 
 	const player = Game.assignActivePlayer()
 	$("#player-name").text(player.name)
@@ -242,7 +266,7 @@ Game.loadTask = function() {
 		// Disables the drink button if the penalty is -1 i.e. they have to lose a life or do the task
 		if(task.penalty !== -1) {
 			Game.setDecisionButtons(false, false, false)
-			$("#drink-button").text("Drink " + Game.calculateSips(Game.activePlayer.sips, task.penalty))
+			$("#drink-button").text("Drink " + Game.calculateSipsRandomized(Game.activePlayer.sips, task.penalty))
 		} else {
 			Game.setDecisionButtons(false, true, false)
 			$("#drink-button").text("No alternative!")

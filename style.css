@@ -233,7 +233,7 @@ body {
 	display: none;
 }
 
-#task-string {
+#task-string, #nhie-text {
 	margin: 2em;
 }
 
