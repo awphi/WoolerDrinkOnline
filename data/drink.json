@@ -27,12 +27,12 @@
 		"description": "Everyone drinks <sips[0]>.",
 		"penalty": -1,
 		"isDrinking": "sips",
-		"group": "everyone"
+		"drinkingGroup": "everyone"
 	},
 	{
 		"description": "All girls drink <sips[0]>.",
 		"penalty": -1,
 		"isDrinking": "sips",
-		"group": "female"
+		"drinkingGroup": "female"
 	}
 ]

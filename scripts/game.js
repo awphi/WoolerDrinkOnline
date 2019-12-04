@@ -84,7 +84,7 @@ Game.getRandomPlayer = function(parseMap) {
 }
 
 Game.registerSips = function(task) {
-	if(!("isDrinking" in task) | task["isDrinking"] === "sips") {
+	if(task["isDrinking"] == null || task["isDrinking"] === "sips") {
 		Game.activeSips = Game.calculateSips(Game.activePlayer.sips, task.penalty)
 	} else {
 		Game.activeSips = Number(task["isDrinking"])
@@ -160,7 +160,7 @@ Game.pickAndParseTask = function(cat) {
 			if(arg === "player") {
 				task.description = task.description.replace(regexp, playeri.name)
 			} else if(arg === "sips") {
-				task.description = task.description.replace(regexp, Game.calculateSipsRandomized(playeri.sips, task.penalty) + " sips")
+				task.description = task.description.replace(regexp, Game.calculateSipsRandomized(playeri.sips, task.penalty) + " sip(s)")
 			}
 		}
 	}
@@ -221,10 +221,6 @@ Game.playerStayDead = function() {
 
 Game.decisionMade = function(dec) {
 	Game.setDecisionButtons(true, true, true)
-	if(dec === "drink") {
-		Game.activePlayer.sips += Game.activeSips
-	} 
-
 	if(dec === "heart" && Game.activePlayer.hearts > 0) {
 		Game.activePlayer.hearts -= 1
 
@@ -232,23 +228,15 @@ Game.decisionMade = function(dec) {
 			Game.playerDied(Game.activePlayer)
 			return
 		}
-	}
+	} else if(dec === "drink" || (dec === "task" && "isDrinking" in Game.activeTask)) {
+		if(Game.activeTask["drinkingGroup"] !== null) {
+			const grp = Game.activeTask["drinkingGroup"]
 
-	if(dec === "task" && "isDrinking" in Game.activeTask) {
-		if(Game.activeTask["group"] !== null) {
-			const grp = Game.activeTask["group"]
+			for(key in Controller.players) {
+				var shouldDrink = (grp === "everyone") || (grp === "male" && Controller.players[key].male) || (grp === "female" && !Controller.players[key].male)
 
-			if(grp === "everyone") {
-				for(key in Controller.players) {
+				if(shouldDrink) {
 					Controller.players[key].sips += Game.activeSips
-				}
-			} else if(grp === "female" || grp === "male") {
-				for(key in Controller.players) {
-					var shouldDrink = (grp === "male" && Controller.players[key].male) || (grp === "female" && !Controller.players[key].male)
-
-					if(shouldDrink) {
-						Controller.players[key].sips += Game.activeSips
-					}
 				}
 			}
 		} else {
