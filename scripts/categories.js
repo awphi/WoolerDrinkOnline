@@ -62,7 +62,6 @@ Categories.populate = function() {
 Categories.chosenEdited = function() {
 	const $elems = $("categoryunit")
 	for (var i = $elems.length - 1; i >= 0; i--) {
-		console.log($($elems[i]).find("input"))
 		if($($elems[i]).find("input")[0].checked) {
 			$("#categories-chosen-button").attr("disabled", false)
 			return;

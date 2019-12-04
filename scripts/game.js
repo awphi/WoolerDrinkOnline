@@ -22,10 +22,10 @@ const Game = {
 		return Math.round(y)
 	},
 	calculateSipsRandomized: function(sipsIn, penalty) {
-		const sips = Game.calculateSips(sipsIn, penalty)
+		var sips = Game.calculateSips(sipsIn, penalty)
 		const r = Controller.randomInt(-(sips / 4), (sips / 4))
 		sips += r
-		return r
+		return Math.round(sips)
 	},
 	calculateSips: null
 }
@@ -129,7 +129,6 @@ Game.pickAndParseTask = function(cat) {
 	}
 
 	const matches = task.description.match(Game.regex)
-	console.log(matches)
 
 	if(matches != null) {
 		for (var i = matches.length - 1; i >= 0; i--) {
