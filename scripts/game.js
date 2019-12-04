@@ -221,6 +221,7 @@ Game.playerStayDead = function() {
 
 Game.decisionMade = function(dec) {
 	Game.setDecisionButtons(true, true, true)
+	console.log(dec)
 	if(dec === "heart" && Game.activePlayer.hearts > 0) {
 		Game.activePlayer.hearts -= 1
 
@@ -229,7 +230,8 @@ Game.decisionMade = function(dec) {
 			return
 		}
 	} else if(dec === "drink" || (dec === "task" && "isDrinking" in Game.activeTask)) {
-		if(Game.activeTask["drinkingGroup"] !== null) {
+		console.log("here" + Game.activeTask["drinkingGroup"])
+		if(Game.activeTask["drinkingGroup"] != null) {
 			const grp = Game.activeTask["drinkingGroup"]
 
 			for(key in Controller.players) {
