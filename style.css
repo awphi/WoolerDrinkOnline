@@ -6,7 +6,7 @@ html, body {
 	overflow-y: hidden;
 }
 
-h1, h2, h3, p, p2, a {
+h1, h2, h3, p, p2, p3, a {
 	font-family: 'Axiforma Book';
 	margin: 0;
 	color: white;
@@ -22,6 +22,11 @@ p {
 p2 {
 	word-break: break-word; 
 	font-size: 10pt;
+}
+
+p3 {
+	word-break: break-word; 
+	font-size: 6pt;
 }
 
 h2 {
@@ -45,6 +50,7 @@ h1 {
 	display: inline-block;
 	min-width: 60px;
 	min-height: 34px;
+	max-height: 34px;
 }
 
 /* Hide default HTML checkbox */
@@ -177,6 +183,13 @@ categoryunit {
 .ui-element {
 	box-shadow: 5px 5px 8px var(--cl-shadow);
 	padding: 0.5em 1em 0.5em 1em;
+}
+
+.mode-box {
+	width: 80%;
+}
+
+.ui-indicator {
 	width: 100px;
 }
 

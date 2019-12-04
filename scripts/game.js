@@ -8,8 +8,25 @@ const Game = {
 	},
 	weightsum: 0,
 	taskbank: {},
-	regex: /<(player|sips)\[(md|ld|[0-9]+)\]>/g
+	regex: /<(player|sips)\[(md|ld|[0-9]+)\]>/g,
+	calculateSipsParty: function(sipsIn, penalty) {
+		const y = (2.5 + (penalty / 3)) * (100 / (sipsIn + 40))
+		return Math.round(y)
+	},
+	calculateSipsStandard: function(sipsIn, penalty) {
+		//TODO incorporate penalty
+		const y = 0.7 * Math.log(Math.pow(sipsIn, 3) + 5)
+		return Math.round(y)
+	},
+	calculateSipsBrutal: function(sipsIn, penalty) {
+		//TODO incorporate penalty
+		const y = Math.pow(Math.e, 0.01 * (sipsIn + 200))
+		return Math.round(y)
+	},
+	calculateSips: null
 }
+
+Game.calculateSips = Game.calculateSipsStandard
 
 Game.generateRandomizer = function() {
 	Game.randomizer = {}
@@ -23,11 +40,6 @@ Game.generateRandomizer = function() {
 	}
 
 	Game.weightsum = t
-}
-
-Game.calculateSips = function(sipsIn, penalty) {
-	const y = (2.5 + (penalty / 3)) * (100 / (sipsIn + 40))
-	return Math.round(y)
 }
 
 Game.compileTasks = function() {

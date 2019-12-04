@@ -1,8 +1,47 @@
-<div class="flex-column flex-center">
-	<h1>WoolerDrink</h1>
-	<h3>by awphi</h3>	
-</div>
-<div class="flex-row flex-center" style="margin-top: 2em;">
-	<button class="green" disabled="true" style="margin-right: 2em;">Team Mode</button>
-	<button class="green" onclick="Controller.startGame(0)">Battle Royale</button>
+<div class="flex-column flex-center flex-fill">
+	<div class="flex-fill flex-center flex-column">
+		<h1>WoolerDrink</h1>
+		<h3>by awphi</h3>
+		<p2>(for Wooler D2 @ JoBo, Durham 2019)</p2>
+
+		<div class="flex-row flex-center" style="margin-top: 2em;">
+			<button class="green" disabled="true" style="margin-right: 2em;">Team Mode</button>
+			<button class="green" onclick="Controller.startGame(0)">Battle Royale</button>
+		</div>
+	</div>
+	<div style="margin-top: 2em;" class="ui-element mode-box flex-row flex-hcenter">
+		<div class="flex-column">
+			<h2>Party Mode</h2>
+			<p2>Designed to get you drunk quick but ween you off towards the end - i.e. the 'Social lubricant' mode.</p2>
+		</div>
+		<div class="flex-fill"></div>
+		<label class="switch">
+			<input onclick="Controller.modeSelect(this);" group="calculate-select" type="checkbox" calculate-type="Party">
+			<span class="slider round"></span>
+		</label>
+	</div>
+
+	<div style="margin-top: 1em;" class="ui-element mode-box flex-row flex-hcenter">
+		<div class="flex-column">
+			<h2>Standard Mode</h2>
+			<p2>Humble but still fun, drinking ramps up but at a gradually slower pace.</p2>
+		</div>
+		<div class="flex-fill"></div>
+		<label class="switch">
+			<input onclick="Controller.modeSelect(this);" checked="true" group="calculate-select" type="checkbox" calculate-type="Standard">
+			<span class="slider round"></span>
+		</label>
+	</div>
+
+	<div style="margin-top: 1em; margin-bottom: 1em;" class="ui-element mode-box flex-row flex-hcenter">
+		<div class="flex-column">
+			<h2>Brutal Mode</h2>
+			<p2>Gets you exponentially more and more smashed (NOT for lightweights).</p2>
+		</div>
+		<div class="flex-fill"></div>
+		<label class="switch">
+			<input onclick="Controller.modeSelect(this);" group="calculate-select" type="checkbox" calculate-type="Brutal">
+			<span class="slider round"></span>
+		</label>
+	</div>
 </div>

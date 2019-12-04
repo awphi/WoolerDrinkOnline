@@ -49,6 +49,6 @@
 	},
 	{
 		"description": "Remove three items of clothing.",
-		"penalty": 1
+		"penalty": 0
 	}
 ]

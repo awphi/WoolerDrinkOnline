@@ -14,6 +14,8 @@ Controller.startGame = function(mode) {
 		Controller.gamemode = 1
 	}
 
+	const type = $("input[group='calculate-select']").filter(":checked").attr('calculate-type')
+	Game.calculateSips = Game["calculateSips" + type]
 	Controller.load("player-setup")
 }
 
@@ -21,6 +23,20 @@ Controller.load = function(view) {
 	$.ajax({url: "./views/" + view + ".html", success: function(result){
 		$root.html(result);
 	}});
+}
+
+Controller.modeSelect = function(elem) {
+	if(!elem.checked) {
+		elem.checked = true
+		return
+	}
+
+	const $c = $("input[group='calculate-select']")
+	for (var i = $c.length - 1; i >= 0; i--) {
+		if($c[i] !== elem) {
+			$c[i].checked = false
+		}
+	}
 }
 
 Controller.randomInt = function(min, max) {
@@ -88,6 +104,7 @@ Controller.chooseCategories = function() {
 		Controller.players[player].name = $("playerunit[uid=" + player + "]").children("p").text()
 	}
 
+	console.log("x")
 	if(Object.keys(Controller.players).length >= 2) {
 		Controller.load('categories');
 	}
@@ -111,23 +128,4 @@ Controller.playGame = function() {
 	}
 }
 
-//Controller.load("splash")
-
-Controller.categories.push("drink")
-Controller.players[0] = {
-	name: "Adam",
-	male: true,
-	sips: 0,
-	id: 0,
-	hearts: 2
-}
-
-Controller.players[1] = {
-	name: "Daniel",
-	male: true,
-	sips: 0,
-	id: 1,
-	hearts: 2
-}
-
-Controller.load("game")
+Controller.load("splash")
