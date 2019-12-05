@@ -50,6 +50,7 @@ Game.compileTasks = function() {
 	Game.taskbank = {}
 	for (var i = Controller.categories.length - 1; i >= 0; i--) {
 		const e = Controller.categories[i]
+		console.log("./data/" + e + ".json")
 		$.ajax({url: "./data/" + e + ".json", async: false, success: (result) => Game.taskbank[e] = result })
 	}
 }
@@ -123,6 +124,8 @@ Game.getLeastDrunkPlayer = function() {
 
 
 Game.pickAndParseTask = function(cat) {
+	console.log(Game.taskbank[cat])
+	console.log(cat)
 	const r = Controller.randomInt(0, Game.taskbank[cat].length - 1)
 	const task = Object.assign({}, Game.taskbank[cat][r])
 	Game.registerSips(task)
@@ -221,7 +224,6 @@ Game.playerStayDead = function() {
 
 Game.decisionMade = function(dec) {
 	Game.setDecisionButtons(true, true, true)
-	console.log(dec)
 	if(dec === "heart" && Game.activePlayer.hearts > 0) {
 		Game.activePlayer.hearts -= 1
 
@@ -230,7 +232,6 @@ Game.decisionMade = function(dec) {
 			return
 		}
 	} else if(dec === "drink" || (dec === "task" && "isDrinking" in Game.activeTask)) {
-		console.log("here" + Game.activeTask["drinkingGroup"])
 		if(Game.activeTask["drinkingGroup"] != null) {
 			const grp = Game.activeTask["drinkingGroup"]
 
