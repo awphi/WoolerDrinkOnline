@@ -15,8 +15,15 @@ h1, h2, h3, p, p2, p3, a {
 }
 
 p {
-	word-break: break-all; 
 	font-size: 16pt;
+}
+
+.break-all {
+	word-break: break-all;
+}
+
+.break-word {
+	word-break: break-word; 
 }
 
 p2 {

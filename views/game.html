@@ -1,5 +1,5 @@
 <div class="flex-column flex-center flex-fill fill-view">
-	<h1 id="player-name">Player Name</h1>
+	<h1 id="player-name" class="break-word text-center">Player Name</h1>
 	<div class="flex-row" style="width: 100%;">
 		<div class="ui-element ui-indicator flex-row flex-center" style="margin-left: 2em;">
 			<div id="sip-image" class="ui-img"></div>
@@ -22,8 +22,8 @@
 		<button id="heart-button" class="red" disabled="true" style="margin-right: 0.4em;" onclick="Game.decisionMade('heart');">Lose heart</button>
 	</div>
 	<script>
-		Game.generateRandomizer()
 		Game.compileTasks()
+		Game.generateRandomizer()
 		Game.playRound()
 	</script>
 </div>

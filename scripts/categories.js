@@ -45,7 +45,7 @@ const Categories = {
 				Unit.load("nhie", $("#task-view")).then((id) => {
 					const $tv = $("#task-view")
 					Game.activeSips = nhie.sips
-					$tv.find("#nhie-text").text("Drink " + nhie.sips + " sip if you have " + nhie.description)
+					$tv.find("#nhie-text").text("Drink " + nhie.sips + " sip(s) if you have " + nhie.description)
 				})
 			},
 			weight: 8

@@ -20,14 +20,6 @@
         "penalty": 0
     },
     {
-        "description": "Do you lick your plate?",
-        "penalty": 0
-    },
-    {
-        "description": "What was the last R-rated movie you watched?",
-        "penalty": 0
-    },
-    {
         "description": "Have you ever pooped your pants?",
         "penalty": 0
     },
@@ -48,14 +40,6 @@
         "penalty": 0
     },
     {
-        "description": "Have you ever butt-dialed someone?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever eaten something off the floor?",
-        "penalty": 0
-    },
-    {
         "description": "Do you have a security blanket?",
         "penalty": 0
     },
@@ -65,10 +49,6 @@
     },
     {
         "description": "Have you ever used self-tanner?",
-        "penalty": 0
-    },
-    {
-        "description": "When was the last time you brushed your teeth?",
         "penalty": 0
     },
     {
@@ -88,15 +68,7 @@
         "penalty": 0
     },
     {
-        "description": "What ‘As seen on TV’ product do you secretly want to buy?",
-        "penalty": 0
-    },
-    {
         "description": "Are you scared of the dark?",
-        "penalty": 0
-    },
-    {
-        "description": "Do you own a pair of footie pajamas?",
         "penalty": 0
     },
     {
@@ -128,23 +100,7 @@
         "penalty": 0
     },
     {
-        "description": "Have you ever wanted to try LARP (Live Action Role-Play)?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever watched a movie you knew you shouldn’t?",
-        "penalty": 0
-    },
-    {
         "description": "If you had to make out with any Disney character, who would it be?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever accidentally hit something with your car?",
-        "penalty": 0
-    },
-    {
-        "description": "How many pancakes have you eaten in a single sitting?",
         "penalty": 0
     },
     {
@@ -540,11 +496,7 @@
         "penalty": 0
     },
     {
-        "description": "Describe your dream career.",
-        "penalty": 0
-    },
-    {
-        "description": "Would you rather be a guy than a girl? Why?",
+        "description": "Would you rather be a guy than a girl or vice-versa? Why?",
         "penalty": 0
     },
     {
@@ -560,23 +512,7 @@
         "penalty": 0
     },
     {
-        "description": "Who is your first pick for prom?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever had a crush on friend's boyfriend?",
-        "penalty": 0
-    },
-    {
-        "description": "Jock, nerd, or bad guy?",
-        "penalty": 0
-    },
-    {
         "description": "Have you ever been dumped? What was the reason for it?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever flirted with your best friend’s siblings?",
         "penalty": 0
     },
     {
@@ -588,27 +524,19 @@
         "penalty": 0
     },
     {
-        "description": "Who do you hate the most?",
-        "penalty": 0
+        "description": "Who do you hate the most in the room?",
+        "penalty": 2
     },
     {
         "description": "How many kids do you want to have in the future?",
         "penalty": 0
     },
     {
-        "description": "Who are the top five cutest guys in our class? Rank them.",
+        "description": "Rank everyone in the room by their attractiveness.",
         "penalty": 0
     },
     {
-        "description": "Would you kiss a guy on the first date? Would you do more than that?",
-        "penalty": 0
-    },
-    {
-        "description": "If you could be another girl at our school, who would you be?",
-        "penalty": 0
-    },
-    {
-        "description": "Who are you jealous of?",
+        "description": "Would you kiss a guy/girl on the first date? Would you do more than that?",
         "penalty": 0
     },
     {
@@ -617,10 +545,6 @@
     },
     {
         "description": "If you could change one thing about your body, what would it be?",
-        "penalty": 0
-    },
-    {
-        "description": "Who is your celebrity crush?",
         "penalty": 0
     },
     {
@@ -644,22 +568,6 @@
         "penalty": 0
     },
     {
-        "description": "If you could marry any celebrity, who would it be?",
-        "penalty": 0
-    },
-    {
-        "description": "Who is the hottest? Hagrid, Dumbledore, or Dobby?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever wanted to be a cheerleader?",
-        "penalty": 0
-    },
-    {
-        "description": "Do you secretly love Twilight?",
-        "penalty": 0
-    },
-    {
         "description": "What’s the most embarrassing thing you’ve done regarding your crush?",
         "penalty": 0
     },
@@ -676,19 +584,11 @@
         "penalty": 0
     },
     {
-        "description": "Do you wear tighty whities or granny panties?",
-        "penalty": 0
-    },
-    {
         "description": "What size is your bra?",
         "penalty": 0
     },
     {
         "description": "Who is the worst kisser you’ve kissed?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever had a crush on a person at least 10 years older than you?",
         "penalty": 0
     },
     {
@@ -720,10 +620,6 @@
         "penalty": 0
     },
     {
-        "description": "What animal most closely resembles your eating style?",
-        "penalty": 0
-    },
-    {
         "description": "Would you rather not shower for a month, or eat the same meal every day for a month?",
         "penalty": 0
     },
@@ -736,15 +632,7 @@
         "penalty": 0
     },
     {
-        "description": "If you had nine lives, what would you do that you wouldn't do now?",
-        "penalty": 0
-    },
-    {
         "description": "Would you rather eat dog food or cat food?",
-        "penalty": 0
-    },
-    {
-        "description": "Who do you think is the Beyonce of the group?",
         "penalty": 0
     },
     {
@@ -773,18 +661,6 @@
     },
     {
         "description": "What's the most useless piece of knowledge you know?",
-        "penalty": 0
-    },
-    {
-        "description": "If your car broke down in the middle of the road, who in this room would be the last person you would call? Why?",
-        "penalty": 0
-    },
-    {
-        "description": "What's the worst weather to be stuck outside in if all you could wear was a bathing suit?",
-        "penalty": 0
-    },
-    {
-        "description": "What's one food that you will never order at a restaurant?",
         "penalty": 0
     },
     {

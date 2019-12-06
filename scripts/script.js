@@ -104,12 +104,12 @@ Controller.chooseCategories = function() {
 		Controller.players[player].name = $("playerunit[uid=" + player + "]").children("p").text()
 	}
 
-	console.log("x")
 	if(Object.keys(Controller.players).length >= 2) {
 		Controller.load('categories');
 	}
 }
 
+Controller.playGame = function() {
 Controller.playGame = function() {
 	Controller.categories = []
 

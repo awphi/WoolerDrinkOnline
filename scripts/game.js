@@ -37,10 +37,12 @@ Game.generateRandomizer = function() {
 	var t = 0
 	for (var i = Controller.categories.length - 1; i >= 0; i--) {
 		var e = Controller.categories[i]
+		var w = Categories.raw[e].weight
+		var v = Object.keys(Game.taskbank[e]).length
 		Game.randomizer[e] = {}
 		Game.randomizer[e].lower = t
-		Game.randomizer[e].upper = t + (Categories.raw[e].weight - 1)
-		t += Categories.raw[e].weight
+		Game.randomizer[e].upper = t + ((w * v) - 1)
+		t += (w * v)
 	}
 
 	Game.weightsum = t
@@ -50,8 +52,7 @@ Game.compileTasks = function() {
 	Game.taskbank = {}
 	for (var i = Controller.categories.length - 1; i >= 0; i--) {
 		const e = Controller.categories[i]
-		console.log("./data/" + e + ".json")
-		$.ajax({url: "./data/" + e + ".json", async: false, success: (result) => Game.taskbank[e] = result })
+		$.ajax({url: "./data/" + e + ".json", async: false, success: (result) => Game.taskbank[e] = result})
 	}
 }
 
@@ -124,8 +125,6 @@ Game.getLeastDrunkPlayer = function() {
 
 
 Game.pickAndParseTask = function(cat) {
-	console.log(Game.taskbank[cat])
-	console.log(cat)
 	const r = Controller.randomInt(0, Game.taskbank[cat].length - 1)
 	const task = Object.assign({}, Game.taskbank[cat][r])
 	Game.registerSips(task)
