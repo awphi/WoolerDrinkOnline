@@ -110,7 +110,6 @@ Controller.chooseCategories = function() {
 }
 
 Controller.playGame = function() {
-Controller.playGame = function() {
 	Controller.categories = []
 
 	const c = $("categoryunit")
