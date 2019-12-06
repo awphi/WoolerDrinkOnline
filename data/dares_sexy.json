@@ -54,5 +54,149 @@
 	{
 		"description": "Have a pilly wee.",
 		"penalty": 0
-	}
+	},
+	    {
+        "description": "Drink a glass of wine as if it’s water.",
+        "penalty": 0
+    },
+    {
+        "description": "Start twerking in the middle of the room.",
+        "penalty": 0
+    },
+    {
+        "description": "Take your bra off and keep it off for the rest of the game.",
+        "penalty": 0
+    },
+    {
+        "description": "Blindfold yourself and take a shot of whatever we choose.",
+        "penalty": 0
+    },
+    {
+        "description": "Give the person to your right a foot massage.",
+        "penalty": 0
+    },
+    {
+        "description": "Jump up and down for 5 minutes.",
+        "penalty": 0
+    },
+    {
+        "description": "Dance alone for 15 minutes.",
+        "penalty": 0
+    },
+    {
+        "description": "Lay on <player[1]>’s lap.",
+        "penalty": 0
+    },
+    {
+        "description": "Lick the person nearest to you.",
+        "penalty": 0
+    },
+    {
+        "description": "Pretend you can’t talk and try to make a sentence using your body.",
+        "penalty": 0
+    },
+    {
+        "description": "Start hopping on one leg.",
+        "penalty": 0
+    },
+    {
+        "description": "Make out with the person across from you.",
+        "penalty": 0
+    },
+    {
+        "description": "Kiss the person next to you.",
+        "penalty": 0
+    },
+    {
+        "description": "Go on Facebook Live and talk about how much you love pizza for five minutes",
+        "penalty": 0
+    },
+    {
+        "description": "Post a comment on every single post on the first page of your Facebook feed.",
+        "penalty": 0
+    },
+    {
+        "description": "Call a local pharmacy and ask if they have herpes medication.",
+        "penalty": 0
+    },
+    {
+        "description": "Post an unfiltered, unattractive selfie on social media",
+        "penalty": 0
+    },
+    {
+        "description": "f you’re a girl, take off all makeup.",
+        "penalty": 0
+    },
+    {
+        "description": "If you’re a guy, put on makeup.",
+        "penalty": 0
+    },
+    {
+        "description": "Do your best Britney Spears imitation.",
+        "penalty": 0
+    },
+    {
+        "description": "Call two people from your contact list and start “meowing” at them. Then laugh and hang up.",
+        "penalty": 0
+    },
+    {
+        "description": "Call the last person in your call history and talk in a foreign accent. Then hang up.",
+        "penalty": 0
+    },
+    {
+        "description": "Walk on all fours as if you’re a dog.",
+        "penalty": 0
+    },
+    {
+        "description": "Show us your Snapchat \"my eyes only\".",
+        "penalty": 0
+    },
+    {
+        "description": "Let us read your Snapchat.",
+        "penalty": 0
+    },
+    {
+        "description": "Let us read your Facebook messages.",
+        "penalty": 0
+    },
+    {
+        "description": "Show us your phone and let us go through it for five minutes.",
+        "penalty": 0
+    },
+    {
+        "description": "“Moon” us.",
+        "penalty": 0
+    },
+    {
+        "description": "Say something extremely politically incorrect about someone you hate.",
+        "penalty": 0
+    },
+    {
+        "description": "Tell your crush you like them.",
+        "penalty": 0
+    },
+    {
+        "description": "<player[1]> chooses who you text. <player[2]> chooses what you say.",
+        "penalty": 0
+    },
+    {
+        "description": "Make up a dance.",
+        "penalty": 0
+    },
+    {
+        "description": "Make out with a vegetable.",
+        "penalty": 0
+    },
+    {
+        "description": "Get naked and run around the room.",
+        "penalty": 0
+    },
+    {
+        "description": "Let us blindfold you and tickle you!",
+        "penalty": 0
+    },
+    {
+        "description": "Pretend to “drunk dial” your ex and say “meow bear.”.",
+        "penalty": 0
+    }
 ]

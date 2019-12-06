@@ -8,10 +8,6 @@
 		"penalty": 1
 	},
 	{
-		"description": "If you could take away one bad thing in the world what would it be?",
-		"penalty": 4
-	},
-	{
         "description": "Do you write in a diary?",
         "penalty": 1
     },
@@ -132,10 +128,6 @@
         "penalty": 0
     },
     {
-        "description": "What is the most childish thing that you still do?",
-        "penalty": 0
-    },
-    {
         "description": "Would you wear your shirt inside out for a whole day if someone paid you $100?",
         "penalty": 0
     },
@@ -232,7 +224,7 @@
         "penalty": 0
     },
     {
-        "description": "Would you rather lose your sex organs forever or gain 200 pounds?",
+        "description": "Would you rather lose your sex organs forever or gain 200lbs (90kg)?",
         "penalty": 0
     },
     {
@@ -252,10 +244,6 @@
         "penalty": 0
     },
     {
-        "description": "Who is your favorite? Mom or Dad?",
-        "penalty": 0
-    },
-    {
         "description": "What is the most illegal thing you have ever done?",
         "penalty": 0
     },
@@ -269,10 +257,6 @@
     },
     {
         "description": "Have you ever tasted ear wax?",
-        "penalty": 0
-    },
-    {
-        "description": "How often do you wash your undergarments?",
         "penalty": 0
     },
     {
@@ -308,10 +292,6 @@
         "penalty": 0
     },
     {
-        "description": "What is your go-to song for the shower?",
-        "penalty": 0
-    },
-    {
         "description": "What does your dream boy or girl look like?",
         "penalty": 0
     },
@@ -325,14 +305,6 @@
     },
     {
         "description": "Who is your secret crush?",
-        "penalty": 0
-    },
-    {
-        "description": "Do you talk in your sleep?",
-        "penalty": 0
-    },
-    {
-        "description": "Do you drool in your sleep?",
         "penalty": 0
     },
     {
@@ -364,7 +336,7 @@
         "penalty": 0
     },
     {
-        "description": "Have you ever peed yourself?",
+        "description": "Have you ever peed yourself (not as a child)?",
         "penalty": 0
     },
     {
@@ -393,18 +365,6 @@
     },
     {
         "description": "What is your guilty pleasure?",
-        "penalty": 0
-    },
-    {
-        "description": "Did your parents ever give you the “birds and the bees” talk?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever practiced kissing in a mirror?",
-        "penalty": 0
-    },
-    {
-        "description": "Do you cover your eyes during a scary part in a movie?",
         "penalty": 0
     },
     {
@@ -516,10 +476,6 @@
         "penalty": 0
     },
     {
-        "description": "If you could go out on a date with a celebrity, who would it be?",
-        "penalty": 0
-    },
-    {
         "description": "Who do you hate the most in the room?",
         "penalty": 2
     },
@@ -585,10 +541,6 @@
     },
     {
         "description": "Who is the worst kisser you’ve kissed?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever asked someone out?",
         "penalty": 0
     },
     {
@@ -676,10 +628,6 @@
         "penalty": 0
     },
     {
-        "description": "How long have you gone without brushing your teeth?",
-        "penalty": 0
-    },
-    {
         "description": "If you could only text one person for the rest of your life, but you could never talk to that person face to face, who would that be?",
         "penalty": 0
     },
@@ -688,7 +636,11 @@
         "penalty": 0
     },
     {
-        "description": "Who would you hate to see naked?",
+        "description": "Which player would you hate to see naked most?",
+        "penalty": 0
+    },
+    {
+        "description": "Which player would you like to see naked most?",
         "penalty": 0
     }
 ]

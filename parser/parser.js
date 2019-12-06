@@ -9,7 +9,7 @@ fs.readFile('data.txt', 'utf8', function(err, contents) {
 		var a = txt[i]
 		data.push({
 			"description": a,
-			"penalty": 0
+			"sips": 2
 		})
 	}
 
