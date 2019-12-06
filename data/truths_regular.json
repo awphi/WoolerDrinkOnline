@@ -13,18 +13,14 @@
 	},
 	{
         "description": "Do you write in a diary?",
-        "penalty": 0
+        "penalty": 1
     },
     {
         "description": "What is something that no one else knows about you?",
         "penalty": 0
     },
     {
-        "description": "Have you ever pooped your pants?",
-        "penalty": 0
-    },
-    {
-        "description": "Have you ever had lice?",
+        "description": "Have you ever pooped your pants (not as a child)?",
         "penalty": 0
     },
     {
@@ -41,7 +37,7 @@
     },
     {
         "description": "Do you have a security blanket?",
-        "penalty": 0
+        "penalty": 1
     },
     {
         "description": "What do your favorite pajamas look like?",
@@ -53,7 +49,7 @@
     },
     {
         "description": "What is something you’ve done to try to be ‘cooler’?",
-        "penalty": 0
+        "penalty": 1
     },
     {
         "description": "How many selfies do you take a day?",
@@ -65,7 +61,7 @@
     },
     {
         "description": "Do you still take bubble baths?",
-        "penalty": 0
+        "penalty": 1
     },
     {
         "description": "Are you scared of the dark?",
@@ -85,7 +81,7 @@
     },
     {
         "description": "Do you dance when you’re by yourself?",
-        "penalty": 0
+        "penalty": 1
     },
     {
         "description": "What is the most food you’ve eaten in a single sitting?",
