@@ -164,7 +164,7 @@ input:checked + .slider:before {
 
 .rainbow-background {
 	animation-name: background;
-	animation-duration: 60s;
+	animation-duration: 45s;
 	animation-iteration-count: infinite;
 }
 
